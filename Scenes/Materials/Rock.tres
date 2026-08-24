@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://d35fr8dy4snn4"]
+
+[ext_resource type="Texture2D" uid="uid://dne3booxe4c4y" path="res://IMG/Tex/Rock 3.png" id="1_la0af"]
+
+[resource]
+albedo_texture = ExtResource("1_la0af")
+uv1_scale = Vector3(0.085, 0.085, 0.085)
+uv1_offset = Vector3(-0.295, 0, 0)
+uv1_triplanar = true
+uv1_world_triplanar = true

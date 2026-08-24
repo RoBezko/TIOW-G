@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://dbr30oi6nl87x"]
+
+[ext_resource type="Texture2D" uid="uid://b44ppsp5v7484" path="res://IMG/UI/TSTHud.png" id="1_sprlj"]
+[ext_resource type="Texture2D" uid="uid://cy7eh6wnp7vrl" path="res://IMG/UI/mashineTrue.png" id="2_ny26j"]
+
+[node name="HUD" type="Control" unique_id=2028653410]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TstHud" type="Sprite2D" parent="." unique_id=2045987444]
+position = Vector2(795.1111, 451.25)
+scale = Vector2(0.09033332, 0.090333335)
+texture = ExtResource("1_sprlj")
+
+[node name="MashineTrue" type="Sprite2D" parent="." unique_id=815702081]
+position = Vector2(1088, 537.5)
+scale = Vector2(0.12551628, 0.27958575)
+texture = ExtResource("2_ny26j")
+
+[node name="Label" type="Label" parent="." unique_id=867518950]
+layout_mode = 0
+offset_left = 864.0
+offset_top = 616.0
+offset_right = 1134.0
+offset_bottom = 639.0
+theme_override_colors/font_color = Color(1, 0, 1, 1)
+text = "V1 is where Char will be displayed*"
+
+[node name="Label2" type="Label" parent="." unique_id=1218821947]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 26
+text = "OBJECTIVES:
+-IDK
+-IDK
+-IDK"

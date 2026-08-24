@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://wpi23witwi25"]
+
+[ext_resource type="Script" uid="uid://dmki3upqfwkww" path="res://scripts/PLR/PLR.gd" id="1_egc12"]
+[ext_resource type="Script" uid="uid://4hwm8l5tutoi" path="res://scripts/PLR/camera_controller.gd" id="2_8qx4x"]
+[ext_resource type="Script" uid="uid://cj14le153m2ax" path="res://scripts/PLR/extra/sfx.gd" id="3_gj1rg"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g4v7s"]
+
+[node name="PLR" type="CharacterBody3D" unique_id=2023346319 node_paths=PackedStringArray("sfx")]
+script = ExtResource("1_egc12")
+sfx = NodePath("SFX")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=742195022]
+shape = SubResource("CapsuleShape3D_g4v7s")
+
+[node name="CameraController" type="Node3D" parent="." unique_id=1578496565 node_paths=PackedStringArray("PLR")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5073291, 0)
+script = ExtResource("2_8qx4x")
+PLR = NodePath("..")
+
+[node name="Camera3D" type="Camera3D" parent="CameraController" unique_id=1103717524]
+fov = 80.0
+
+[node name="FlashlightLight" type="SpotLight3D" parent="CameraController/Camera3D" unique_id=1270075365]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6899357, -0.05769801, -0.23441863)
+light_color = Color(0.961513, 0.961513, 2.3102762e-06, 1)
+light_energy = 5.752
+light_indirect_energy = 6.228
+spot_range = 7.821
+spot_angle = 21.594809
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1481874637]
+visible = false
+omni_range = 4096.0
+
+[node name="SFX" type="Node" parent="." unique_id=500043833]
+script = ExtResource("3_gj1rg")
+
+[node name="FlashClick" type="AudioStreamPlayer" parent="SFX" unique_id=953009614]
+volume_db = -9.123
+bus = &"SFX"

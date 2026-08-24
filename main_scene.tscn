@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://dmb6ruaws5b18"]
+
+[ext_resource type="PackedScene" uid="uid://wpi23witwi25" path="res://Scenes/3DScenes/chars/plr.tscn" id="1_2c62f"]
+[ext_resource type="Script" uid="uid://d2q638lrcqt3b" path="res://scripts/main_scene.gd" id="1_gyfs4"]
+[ext_resource type="PackedScene" uid="uid://c5ow77xsph1vb" path="res://Scenes/3DScenes/town_1.tscn" id="3_nfk4m"]
+[ext_resource type="Script" uid="uid://b7o75gq4ghdbc" path="res://scripts/Menu/main_menu.gd" id="4_d5x1h"]
+[ext_resource type="Texture2D" uid="uid://b5ekmieb3jkfa" path="res://IMG/Arms/ArmFlashlight.png" id="5_8mm7a"]
+[ext_resource type="PackedScene" uid="uid://dbr30oi6nl87x" path="res://Scenes/UI/hud.tscn" id="6_hq1ik"]
+[ext_resource type="Texture2D" uid="uid://bpbpg3jrr38yl" path="res://IMG/Arms/Fist.png" id="6_nfk4m"]
+
+[sub_resource type="Environment" id="Environment_g4v7s"]
+background_mode = 1
+background_color = Color(0.15127608, 0.15127608, 0.15127608, 1)
+background_energy_multiplier = 5.29
+fog_enabled = true
+fog_light_color = Color(0.22079057, 0.24304458, 0.27767125, 1)
+fog_light_energy = 0.95
+fog_density = 0.278
+fog_sky_affect = 0.196
+fog_height_density = 16.0
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0603
+volumetric_fog_albedo = Color(0.288518, 0.28851798, 0.28851798, 1)
+volumetric_fog_anisotropy = 0.21
+
+[node name="MainScene" type="Node" unique_id=1321147310 node_paths=PackedStringArray("other")]
+script = ExtResource("1_gyfs4")
+other = NodePath("UI/FlashlightArm")
+
+[node name="PLR" parent="." unique_id=2023346319 instance=ExtResource("1_2c62f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9627193, 0)
+
+[node name="LevelHolder" type="Node3D" parent="." unique_id=129915281]
+
+[node name="Town1" parent="LevelHolder" unique_id=1906301491 instance=ExtResource("3_nfk4m")]
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1985900505]
+
+[node name="MainMenu" type="Control" parent="UI" unique_id=489954409 node_paths=PackedStringArray("main_scene")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_d5x1h")
+main_scene = NodePath("../..")
+
+[node name="Name" type="Label" parent="UI/MainMenu" unique_id=855337303]
+layout_mode = 0
+anchor_left = 0.046006944
+anchor_top = 0.08796296
+anchor_right = 0.29774305
+anchor_bottom = 0.28703704
+theme_override_font_sizes/font_size = 91
+text = "NAME"
+metadata/_edit_use_anchors_ = true
+
+[node name="Play" type="Button" parent="UI/MainMenu" unique_id=414516427]
+layout_mode = 0
+anchor_left = 0.053819444
+anchor_top = 0.36574075
+anchor_right = 0.18402778
+anchor_bottom = 0.5046296
+offset_right = -103.0
+offset_bottom = -59.0
+theme_override_font_sizes/font_size = 59
+text = "PLAY"
+metadata/_edit_use_anchors_ = true
+
+[node name="FlashlightArm" type="Control" parent="UI" unique_id=120581266]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+
+[node name="ArmFlashlight" type="Sprite2D" parent="UI/FlashlightArm" unique_id=174603196]
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("5_8mm7a")
+
+[node name="Fist" type="Sprite2D" parent="UI/FlashlightArm" unique_id=635536245]
+position = Vector2(632, 384)
+scale = Vector2(0.59444445, 0.5944444)
+texture = ExtResource("6_nfk4m")
+
+[node name="HUD" parent="UI" unique_id=2028653410 instance=ExtResource("6_hq1ik")]
+visible = false
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1271025912]
+environment = SubResource("Environment_g4v7s")
+
+[connection signal="pressed" from="UI/MainMenu/Play" to="UI/MainMenu" method="_on_play_pressed"]

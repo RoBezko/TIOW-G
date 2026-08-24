@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://cbvgglb6aey02"]
+
+[ext_resource type="Material" uid="uid://blhdyhawep4i7" path="res://Scenes/Materials/Leaves.tres" id="1_jtduv"]
+
+[node name="Bush" type="Node3D" unique_id=759327744]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=1710744200]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=908971931]
+transform = Transform3D(0.8660254, -0.5, 0, 0.5, 0.8660254, 0, 0, 0, 1, -0.70706713, 0, 0)
+material = ExtResource("1_jtduv")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1836195026]
+transform = Transform3D(0.9024958, 0.37293923, -0.21544775, -0.3819082, 0.9242003, 0, 0.19911687, 0.08228127, 0.97651535, -0.11793275, 0.19187483, 0.07006836)
+size = Vector3(1.3608398, 1.2661133, 1.6157227)
+material = ExtResource("1_jtduv")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D" unique_id=416089250]
+transform = Transform3D(0.7529359, 0.31113648, 0.57989806, -0.38190818, 0.9242003, 1.792454e-08, -0.535942, -0.22146785, 0.814689, 0.6961677, 0.25797173, -0.017389057)
+size = Vector3(1.3608398, 1.3846741, 1.4406738)
+material = ExtResource("1_jtduv")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1993639387]
+transform = Transform3D(0.7529358, 0.31113642, 0.57989794, -0.57901, 0.73201376, 0.3590308, -0.31278592, -0.606094, 0.73131037, 0.25170875, 0.30845177, 0.061379172)
+size = Vector3(1.3608398, 0.79142, 1.010376)
+material = ExtResource("1_jtduv")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1856431417]
+transform = Transform3D(0.7529358, 0.31113642, 0.57989794, -0.57901, 0.73201376, 0.3590308, -0.31278592, -0.606094, 0.73131037, 0.96713275, -0.017679855, -0.35427594)
+size = Vector3(1.3608398, 0.79142, 1.3718872)
+material = ExtResource("1_jtduv")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1794592016]
+transform = Transform3D(0.7529358, 0.31113642, 0.57989794, 0.07344119, 0.8359483, -0.5438719, -0.65398324, 0.452089, 0.6065652, 0.55950105, -0.1558016, 0.2749319)
+size = Vector3(1.4597168, 0.79142, 1.1407623)
+material = ExtResource("1_jtduv")
