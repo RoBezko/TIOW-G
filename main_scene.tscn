@@ -2,37 +2,374 @@
 
 [ext_resource type="PackedScene" uid="uid://wpi23witwi25" path="res://Scenes/3DScenes/chars/plr.tscn" id="1_2c62f"]
 [ext_resource type="Script" uid="uid://d2q638lrcqt3b" path="res://scripts/main_scene.gd" id="1_gyfs4"]
-[ext_resource type="PackedScene" uid="uid://c5ow77xsph1vb" path="res://Scenes/3DScenes/town_1.tscn" id="3_nfk4m"]
+[ext_resource type="Script" uid="uid://du8osuno2v8fy" path="res://scripts/level_holder.gd" id="3_7ycvg"]
 [ext_resource type="Script" uid="uid://b7o75gq4ghdbc" path="res://scripts/Menu/main_menu.gd" id="4_d5x1h"]
-[ext_resource type="Texture2D" uid="uid://b5ekmieb3jkfa" path="res://IMG/Arms/ArmFlashlight.png" id="5_8mm7a"]
+[ext_resource type="PackedScene" uid="uid://ek77jtagob0e" path="res://Scenes/3DScenes/start_scene.tscn" id="4_nfk4m"]
 [ext_resource type="PackedScene" uid="uid://dbr30oi6nl87x" path="res://Scenes/UI/hud.tscn" id="6_hq1ik"]
-[ext_resource type="Texture2D" uid="uid://bpbpg3jrr38yl" path="res://IMG/Arms/Fist.png" id="6_nfk4m"]
+[ext_resource type="Texture2D" uid="uid://cf3d6wn8b7q74" path="res://IMG/UI/Document.png" id="7_7ycvg"]
+[ext_resource type="Script" uid="uid://d2hjxofgu1nsj" path="res://scripts/Menu/folder_appear.gd" id="7_wr18j"]
+[ext_resource type="Sky" uid="uid://cfc3ob8a4o63e" path="res://Scenes/Materials/NightSkyHDRI014_2K.tres" id="8_66tet"]
+[ext_resource type="Texture2D" uid="uid://dbmw5nnmhbog3" path="res://IMG/UI/ECrossSig.png" id="8_wr18j"]
+[ext_resource type="AudioStream" uid="uid://ct4f1fd6wr13e" path="res://Sounds/SFX/sig.mp3" id="10_qwutr"]
+[ext_resource type="Texture2D" uid="uid://bnxm82vmcv71r" path="res://IMG/UI/E-new.png" id="11_671wp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ycvg"]
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.56078434, 0.6392157, 1, 1)
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wr18j"]
+emission_shape = 3
+emission_box_extents = Vector3(20, 5, 20)
+direction = Vector3(1, -1, 0)
+spread = 10.0
+initial_velocity_min = 5.0
+initial_velocity_max = 5.0
+scale_min = 0.5
+scale_max = 1.5
+hue_variation_min = -0.07000002
+hue_variation_max = 0.06999998
+collision_mode = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_qwutr"]
+size = Vector2(0.05, 0.05)
+
+[sub_resource type="QuadMesh" id="QuadMesh_g4v7s"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_66tet"]
+data = PackedVector3Array(0.5, -0.5, 0, -0.5, -0.5, 0, 0.5, 0.5, 0, -0.5, -0.5, 0, -0.5, 0.5, 0, 0.5, 0.5, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yf5fn"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_g4v7s"]
+Panel/styles/panel = SubResource("StyleBoxFlat_yf5fn")
+
+[sub_resource type="Animation" id="Animation_nfk4m"]
+resource_name = "Fade out"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0, -0.16666667, 0.16666667, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="Animation" id="Animation_66tet"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7ycvg"]
+_data = {
+&"Fade out": SubResource("Animation_nfk4m"),
+&"RESET": SubResource("Animation_66tet")
+}
+
+[sub_resource type="Animation" id="Animation_qwutr"]
+resource_name = "FolderCameIn"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Document:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6666667, 2),
+"transitions": PackedFloat32Array(0.3186403, 0.23325826, 1),
+"update": 0,
+"values": [Vector2(576, 1048), Vector2(576, 341.685), Vector2(576, 340.63)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Document:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6666667, 2),
+"transitions": PackedFloat32Array(0.5, 0.36602148, 0.30778593),
+"update": 0,
+"values": [0.27576202, 0.0, -0.034906585]
+}
+
+[sub_resource type="Animation" id="Animation_mo76n"]
+resource_name = "PanelHide"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_42l1d"]
+resource_name = "PanelShow"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_671wp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Document:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(576, 1048)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Document:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.27576202]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mo76n"]
+_data = {
+&"FolderCameIn": SubResource("Animation_qwutr"),
+&"PanelHide": SubResource("Animation_mo76n"),
+&"PanelShow": SubResource("Animation_42l1d"),
+&"RESET": SubResource("Animation_671wp")
+}
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_m35m6"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_u0ygc"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_7th4q"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wr18j"]
+texture = ExtResource("8_wr18j")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_33x8s"]
+bg_color = Color(0.5647059, 0.5647059, 0.5647059, 0.49019608)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7ycvg"]
+texture = ExtResource("8_wr18j")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2j2di"]
+texture = ExtResource("8_wr18j")
+
+[sub_resource type="Theme" id="Theme_yf5fn"]
+CheckButton/icons/checked = SubResource("CanvasTexture_m35m6")
+CheckButton/icons/checked_disabled = SubResource("CanvasTexture_u0ygc")
+CheckButton/icons/unchecked = SubResource("CanvasTexture_7th4q")
+CheckButton/styles/disabled = SubResource("StyleBoxTexture_wr18j")
+CheckButton/styles/hover = SubResource("StyleBoxFlat_33x8s")
+CheckButton/styles/hover_pressed = SubResource("StyleBoxTexture_7ycvg")
+CheckButton/styles/pressed = SubResource("StyleBoxTexture_2j2di")
+
+[sub_resource type="Animation" id="Animation_2jcla"]
+resource_name = "AnimStart"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_m35m6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u0ygc"]
+_data = {
+&"AnimStart": SubResource("Animation_2jcla"),
+&"RESET": SubResource("Animation_m35m6")
+}
 
 [sub_resource type="Environment" id="Environment_g4v7s"]
-background_mode = 1
+background_mode = 2
 background_color = Color(0.15127608, 0.15127608, 0.15127608, 1)
 background_energy_multiplier = 5.29
+sky = ExtResource("8_66tet")
+ambient_light_color = Color(1, 1, 1, 1)
 fog_enabled = true
-fog_light_color = Color(0.22079057, 0.24304458, 0.27767125, 1)
+fog_light_color = Color(0.14942083, 0.16724747, 0.19398704, 1)
 fog_light_energy = 0.95
-fog_density = 0.278
-fog_sky_affect = 0.196
+fog_aerial_perspective = 0.351
 fog_height_density = 16.0
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.0603
 volumetric_fog_albedo = Color(0.288518, 0.28851798, 0.28851798, 1)
+volumetric_fog_emission = Color(0.19076231, 0.19076234, 0.19076231, 1)
 volumetric_fog_anisotropy = 0.21
+volumetric_fog_detail_spread = 0.5
 
-[node name="MainScene" type="Node" unique_id=1321147310 node_paths=PackedStringArray("other")]
+[node name="MainScene" type="Node" unique_id=1321147310]
 script = ExtResource("1_gyfs4")
-other = NodePath("UI/FlashlightArm")
 
-[node name="PLR" parent="." unique_id=2023346319 instance=ExtResource("1_2c62f")]
+[node name="PLR" parent="." unique_id=2023346319 node_paths=PackedStringArray("rain_particles") instance=ExtResource("1_2c62f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9627193, 0)
+rain_particles = NodePath("Rain")
 
-[node name="LevelHolder" type="Node3D" parent="." unique_id=129915281]
+[node name="Rain" type="GPUParticles3D" parent="PLR" unique_id=417821062]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.73111, 0)
+material_override = SubResource("StandardMaterial3D_7ycvg")
+transparency = 0.88
+cast_shadow = 0
+emitting = false
+amount = 8000
+lifetime = 3.0
+preprocess = 3.0
+visibility_aabb = AABB(-25, -50, -25, 50, 50, 50)
+process_material = SubResource("ParticleProcessMaterial_wr18j")
+draw_pass_1 = SubResource("QuadMesh_qwutr")
 
-[node name="Town1" parent="LevelHolder" unique_id=1906301491 instance=ExtResource("3_nfk4m")]
+[node name="LevelHolder" type="Node3D" parent="." unique_id=129915281 node_paths=PackedStringArray("PLR")]
+script = ExtResource("3_7ycvg")
+PLR = NodePath("../PLR")
+
+[node name="StartScene" parent="LevelHolder" unique_id=1793192492 instance=ExtResource("4_nfk4m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.0239167)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="LevelHolder" unique_id=1392028550]
+transform = Transform3D(2.3411574, 0, 0, 0, -1.0934734e-07, -0.99999994, 0, 2.5015755, -4.3711385e-08, 0, 0, 0)
+mesh = SubResource("QuadMesh_g4v7s")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="LevelHolder/MeshInstance3D" unique_id=1337774578]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LevelHolder/MeshInstance3D/StaticBody3D" unique_id=1126439913]
+shape = SubResource("ConcavePolygonShape3D_66tet")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1985900505]
 
@@ -68,7 +405,10 @@ theme_override_font_sizes/font_size = 59
 text = "PLAY"
 metadata/_edit_use_anchors_ = true
 
-[node name="FlashlightArm" type="Control" parent="UI" unique_id=120581266]
+[node name="HUD" parent="UI" unique_id=2028653410 instance=ExtResource("6_hq1ik")]
+visible = false
+
+[node name="StartVisual" type="Control" parent="UI" unique_id=2013075747]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -76,22 +416,103 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-offset_transform_enabled = true
 
-[node name="ArmFlashlight" type="Sprite2D" parent="UI/FlashlightArm" unique_id=174603196]
-position = Vector2(576, 324)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("5_8mm7a")
+[node name="Panel" type="Panel" parent="UI/StartVisual" unique_id=107519869]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_g4v7s")
 
-[node name="Fist" type="Sprite2D" parent="UI/FlashlightArm" unique_id=635536245]
-position = Vector2(632, 384)
-scale = Vector2(0.59444445, 0.5944444)
-texture = ExtResource("6_nfk4m")
+[node name="Label" type="Label" parent="UI/StartVisual" unique_id=442641714]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "You've been called in by your boss..."
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="HUD" parent="UI" unique_id=2028653410 instance=ExtResource("6_hq1ik")]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/StartVisual" unique_id=1987662131]
+libraries/ = SubResource("AnimationLibrary_7ycvg")
+
+[node name="FolderAppear" type="Control" parent="UI" unique_id=821309453]
 visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_wr18j")
+
+[node name="Document" type="Sprite2D" parent="UI/FolderAppear" unique_id=1193230480]
+position = Vector2(576, 1048)
+rotation = 0.27576202
+scale = Vector2(0.21693271, 0.21693271)
+texture = ExtResource("7_7ycvg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/FolderAppear" unique_id=556386106]
+libraries/ = SubResource("AnimationLibrary_mo76n")
+
+[node name="CheckButton" type="CheckButton" parent="UI/FolderAppear" unique_id=1333450400]
+z_index = 65
+layout_mode = 0
+anchor_left = 0.5799485
+anchor_top = 0.8191954
+anchor_right = 0.780788
+anchor_bottom = 0.89003676
+offset_right = -4.33844
+offset_bottom = 18.094788
+rotation = -0.078907326
+theme = SubResource("Theme_yf5fn")
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="UI/FolderAppear" unique_id=212292649]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_g4v7s")
+
+[node name="sig" type="AudioStreamPlayer" parent="UI/FolderAppear" unique_id=1177170347]
+stream = ExtResource("10_qwutr")
+bus = &"SFX"
+
+[node name="ShowInteract" type="Control" parent="UI" unique_id=1079707476]
+visible = false
+layout_mode = 3
+anchor_left = 0.44400004
+anchor_top = 0.69100004
+anchor_right = 0.55600005
+anchor_bottom = 0.88900006
+offset_left = 0.5119629
+offset_top = 0.23196411
+offset_right = -0.51208496
+offset_bottom = -0.072021484
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/ShowInteract" unique_id=1225719740]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(64, 64)
+scale = Vector2(0.033327334, 0.033327334)
+texture = ExtResource("11_671wp")
+
+[node name="Anim" type="AnimationPlayer" parent="UI/ShowInteract" unique_id=2123254825]
+libraries/ = SubResource("AnimationLibrary_u0ygc")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1271025912]
 environment = SubResource("Environment_g4v7s")
 
 [connection signal="pressed" from="UI/MainMenu/Play" to="UI/MainMenu" method="_on_play_pressed"]
+[connection signal="pressed" from="UI/FolderAppear/CheckButton" to="UI/FolderAppear" method="_on_check_button_pressed"]

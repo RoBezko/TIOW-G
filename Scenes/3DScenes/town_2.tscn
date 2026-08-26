@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://bh432c0i3ut7a"]
+
+[ext_resource type="Script" uid="uid://c7hgdajt4dh2e" path="res://scripts/Map scripts/town_2.gd" id="1_3kg2d"]
+[ext_resource type="Material" uid="uid://2imt7emdyh5q" path="res://Scenes/Materials/DarkBricks.tres" id="1_mpkwq"]
+[ext_resource type="Texture2D" uid="uid://d2a22x75pathx" path="res://IMG/Tex/seamless_grass_01.png" id="2_4jrea"]
+[ext_resource type="PackedScene" uid="uid://dyp0quu7lumiv" path="res://Scenes/3DScenes/Objects/gate.tscn" id="3_mpkwq"]
+[ext_resource type="AudioStream" uid="uid://x33ne56fyu0l" path="res://Sounds/SFX/CloseGate.mp3" id="5_4jrea"]
+[ext_resource type="PackedScene" uid="uid://c7cw05jis31ob" path="res://Scenes/3DScenes/Objects/town_roads.tscn" id="6_3kg2d"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0htig"]
+albedo_texture = ExtResource("2_4jrea")
+uv1_scale = Vector3(0.025, 0.025, 0.025)
+uv1_triplanar = true
+uv1_world_triplanar = true
+uv2_world_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d0u6y"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_g4v7s"]
+size = Vector2(4.555, 20)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_57qmd"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_yf5fn"]
+size = Vector2(17.245, 2.455)
+
+[node name="town_2" type="Node3D" unique_id=1806901222]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+script = ExtResource("1_3kg2d")
+
+[node name="CityWalls" type="CSGCombiner3D" parent="." unique_id=187608765]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CityWalls" unique_id=1651793534]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -55.22354, 8.620819, -39.26003)
+size = Vector3(3, 18.241638, 61.432556)
+material = ExtResource("1_mpkwq")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CityWalls" unique_id=930267738]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -55.22354, 8.620819, 42.071564)
+size = Vector3(3, 18.241638, 66.34985)
+material = ExtResource("1_mpkwq")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CityWalls" unique_id=641629104]
+transform = Transform3D(1.0000001, -2.1770182e-08, -5.806971e-09, 2.1770184e-08, 0.8671519, 0.49804378, -5.8069745e-09, -0.49804372, 0.86715204, -55.22354, 13.9312315, 9.040021)
+size = Vector3(3, 6.790024, 3.5550537)
+material = ExtResource("1_mpkwq")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CityWalls" unique_id=93886785]
+transform = Transform3D(1.0000001, 0, 0, 0, 0.86689675, -0.4984878, 0, 0.49848774, 0.86689687, -55.224, 13.930843, -8.902256)
+size = Vector3(3, 6.926262, 3.1635132)
+material = ExtResource("1_mpkwq")
+
+[node name="Ground" type="CSGBox3D" parent="CityWalls" unique_id=1958988665]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.529755, -0.027697176, 1.5764465)
+size = Vector3(21.94049, 0.001, 42.124695)
+material = SubResource("StandardMaterial3D_0htig")
+metadata/StepSFX = "Grass"
+
+[node name="CityGate" type="Marker3D" parent="." unique_id=688574114]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.940918, 2.850441, 2.5763893e-06)
+
+[node name="Gate" parent="." unique_id=273191932 instance=ExtResource("3_mpkwq")]
+transform = Transform3D(-6.228873e-08, 0, 1.425, 0, 1.425, 0, -1.425, 0, -6.228873e-08, -53.345234, 0.654, 1.9111894e-08)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Gate" unique_id=482845197]
+transform = Transform3D(-0.70175445, 0, 6.1349326e-08, 0, 0.70175445, 0, -6.1349326e-08, 0, -0.70175445, -9.516498e-09, 5.8718414, 0.52454376)
+material_override = SubResource("StandardMaterial3D_d0u6y")
+mesh = SubResource("QuadMesh_g4v7s")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Gate" unique_id=95624645]
+transform = Transform3D(-0.70175445, 0, 6.1349326e-08, 0, 0.70175445, 0, -6.1349326e-08, 0, -0.70175445, -9.516498e-09, -0.34705964, 0.52454376)
+material_override = SubResource("StandardMaterial3D_57qmd")
+mesh = SubResource("QuadMesh_yf5fn")
+
+[node name="GateSFX" type="AudioStreamPlayer3D" parent="." unique_id=1758064999]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.323265, 3.2956233, 2.4182568e-06)
+stream = ExtResource("5_4jrea")
+bus = &"SFX"
+
+[node name="TownRoads" parent="." unique_id=479147341 instance=ExtResource("6_3kg2d")]
+transform = Transform3D(-3.0991376e-07, 0, 7.09, 0, 7.09, 0, -7.09, 0, -3.0991376e-07, -127, 0, 5.5513465e-06)

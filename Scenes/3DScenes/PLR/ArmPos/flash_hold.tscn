@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://b05bcd780schm"]
+
+[ext_resource type="PackedScene" uid="uid://cdfbh7trw0puh" path="res://Scenes/3DScenes/PLR/r_arm_main.tscn" id="1_pkcct"]
+[ext_resource type="PackedScene" uid="uid://bi5r8123hqj1y" path="res://Scenes/3DScenes/PLR/flashlight.tscn" id="2_hi4rb"]
+
+[node name="FlashHold" type="Node3D" unique_id=822649562]
+transform = Transform3D(0.32, 0, 0, 0, 0.32, 0, 0, 0, 0.32, 0, 0, 0)
+
+[node name="RArmMain" parent="." unique_id=1809272220 instance=ExtResource("1_pkcct")]
+transform = Transform3D(-0.90552604, 0.15273623, 0.3958464, 0.38987988, 0.6675828, 0.63429236, -0.16738084, 0.7287007, -0.6640624, -0.75927365, -0.5171455, 0.2278601)
+
+[node name="Flashlight" parent="." unique_id=1183678374 instance=ExtResource("2_hi4rb")]
+transform = Transform3D(-1.245, 0, -1.8798977e-07, 0, 1.245, 0, 1.8798977e-07, 0, -1.245, -0.6283286, 1.016057, -1.0540298)

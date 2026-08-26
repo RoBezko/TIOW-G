@@ -2,11 +2,28 @@
 
 [ext_resource type="Script" uid="uid://dmki3upqfwkww" path="res://scripts/PLR/PLR.gd" id="1_egc12"]
 [ext_resource type="Script" uid="uid://4hwm8l5tutoi" path="res://scripts/PLR/camera_controller.gd" id="2_8qx4x"]
+[ext_resource type="PackedScene" uid="uid://b05bcd780schm" path="res://Scenes/3DScenes/PLR/ArmPos/flash_hold.tscn" id="3_7dbqx"]
 [ext_resource type="Script" uid="uid://cj14le153m2ax" path="res://scripts/PLR/extra/sfx.gd" id="3_gj1rg"]
+[ext_resource type="Script" uid="uid://bfwyjcvtiew6d" path="res://addons/footstepper/footstepper.gd" id="4_gsg5x"]
+[ext_resource type="AudioStream" uid="uid://d2alx556hdv6q" path="res://Sounds/Ambiance/rain.mp3" id="4_po4vs"]
+[ext_resource type="Script" uid="uid://b7517dwyd1msy" path="res://addons/footstepper/footstepper_sound_profile.gd" id="5_st48v"]
+[ext_resource type="AudioStream" uid="uid://c2l4xw4ohrye7" path="res://addons/footstepper/sounds/footstep.ogg" id="6_po4vs"]
+[ext_resource type="AudioStream" uid="uid://dl7j2g3uiy6oc" path="res://addons/footstepper/sounds/jump.ogg" id="7_7dbqx"]
+[ext_resource type="AudioStream" uid="uid://dauapea82bkhj" path="res://addons/footstepper/sounds/land.ogg" id="8_s1h4c"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g4v7s"]
 
-[node name="PLR" type="CharacterBody3D" unique_id=2023346319 node_paths=PackedStringArray("sfx")]
+[sub_resource type="Resource" id="Resource_g4v7s"]
+script = ExtResource("5_st48v")
+material_name = "Grass"
+metadata/_custom_type_script = "uid://b7517dwyd1msy"
+
+[sub_resource type="Resource" id="Resource_yf5fn"]
+script = ExtResource("5_st48v")
+material_name = "Grass"
+metadata/_custom_type_script = "uid://b7517dwyd1msy"
+
+[node name="PLR" type="CharacterBody3D" unique_id=2023346319 node_paths=PackedStringArray("sfx") groups=["PLR"]]
 script = ExtResource("1_egc12")
 sfx = NodePath("SFX")
 
@@ -22,20 +39,44 @@ PLR = NodePath("..")
 fov = 80.0
 
 [node name="FlashlightLight" type="SpotLight3D" parent="CameraController/Camera3D" unique_id=1270075365]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6899357, -0.05769801, -0.23441863)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5235977, -0.24615753, -1.5195469)
+visible = false
 light_color = Color(0.961513, 0.961513, 2.3102762e-06, 1)
 light_energy = 5.752
 light_indirect_energy = 6.228
 spot_range = 7.821
 spot_angle = 21.594809
 
+[node name="FlashHold" parent="CameraController/Camera3D" unique_id=822649562 instance=ExtResource("3_7dbqx")]
+transform = Transform3D(0.32, 0, 0, 0, 0.32, 0, 0, 0, 0.32, -0.34470272, -0.56753325, -0.74279153)
+visible = false
+
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1481874637]
 visible = false
-omni_range = 4096.0
+light_energy = 0.5
+omni_range = 17.815016
 
 [node name="SFX" type="Node" parent="." unique_id=500043833]
 script = ExtResource("3_gj1rg")
 
+[node name="Misc" type="AudioStreamPlayer" parent="SFX" unique_id=631068627]
+bus = &"SFX"
+
 [node name="FlashClick" type="AudioStreamPlayer" parent="SFX" unique_id=953009614]
 volume_db = -9.123
 bus = &"SFX"
+
+[node name="Ambiance" type="AudioStreamPlayer" parent="SFX" unique_id=1056182032]
+bus = &"Ambiant"
+
+[node name="RainOutdoors" type="AudioStreamPlayer" parent="SFX" unique_id=851627517]
+stream = ExtResource("4_po4vs")
+volume_db = -20.0
+bus = &"Ambiant"
+
+[node name="Footstepper" type="Node3D" parent="." unique_id=1844249512]
+script = ExtResource("4_gsg5x")
+audio_volume = -16.0
+default_sound_profile = SubResource("Resource_g4v7s")
+sound_profiles = Array[ExtResource("5_st48v")]([SubResource("Resource_yf5fn")])
+metadata/_custom_type_script = "uid://bfwyjcvtiew6d"

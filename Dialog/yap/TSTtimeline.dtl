@@ -1,0 +1,7 @@
+[background arg="res://IMG/Tex/Acid.png" fade="0.0"]
+join TestNPC right
+TestNPC: Hi
+join PLR left [animation="Fade In"]
+PLR: why
+[voice path="res://Sounds/Dialog/May your L's be many.mp3" volume="-10.0" bus="Dialog"]
+TestNPC: May your L's be many, and your bitches few

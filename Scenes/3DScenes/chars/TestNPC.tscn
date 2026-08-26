@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://4lihi0crp1s6"]
+
+[ext_resource type="Texture2D" uid="uid://cy7eh6wnp7vrl" path="res://IMG/UI/mashineTrue.png" id="1_8433h"]
+[ext_resource type="PackedScene" uid="uid://dhiujtr1xvcxc" path="res://Scenes/3DScenes/DialogArea.tscn" id="2_dnj3s"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dnj3s"]
+albedo_texture = ExtResource("1_8433h")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8433h"]
+albedo_color = Color(0.05882353, 0.6, 0, 1)
+
+[node name="Node3D" type="Node3D" unique_id=790724673]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=806678353]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=96503960]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05042267, 0.7144165, 0)
+material_override = SubResource("StandardMaterial3D_dnj3s")
+size = Vector3(0.4358673, 2.428833, 1)
+material = SubResource("StandardMaterial3D_8433h")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=825956427]
+transform = Transform3D(-6.61506e-09, 0, 0.99999994, 0, 0.35927817, 0, -0.15133494, 0, -4.3711385e-08, 0.2787171, 0.72401226, 0)
+texture = ExtResource("1_8433h")
+
+[node name="Area3D" parent="." unique_id=2063862168 instance=ExtResource("2_dnj3s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.44803846, 0.69316447, 0)

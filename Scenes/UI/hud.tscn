@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b44ppsp5v7484" path="res://IMG/UI/TSTHud.png" id="1_sprlj"]
 [ext_resource type="Texture2D" uid="uid://cy7eh6wnp7vrl" path="res://IMG/UI/mashineTrue.png" id="2_ny26j"]
+[ext_resource type="Texture2D" uid="uid://0jtlco1uoilv" path="res://IMG/UI/OBJ.png" id="3_fdl0h"]
 
 [node name="HUD" type="Control" unique_id=2028653410]
 layout_mode = 3
@@ -12,30 +13,33 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TstHud" type="Sprite2D" parent="." unique_id=2045987444]
-position = Vector2(795.1111, 451.25)
+position = Vector2(360, 199.99997)
+rotation = 3.1415927
 scale = Vector2(0.09033332, 0.090333335)
 texture = ExtResource("1_sprlj")
 
 [node name="MashineTrue" type="Sprite2D" parent="." unique_id=815702081]
-position = Vector2(1088, 537.5)
+position = Vector2(64.00001, 72)
 scale = Vector2(0.12551628, 0.27958575)
 texture = ExtResource("2_ny26j")
 
-[node name="Label" type="Label" parent="." unique_id=867518950]
-layout_mode = 0
-offset_left = 864.0
-offset_top = 616.0
-offset_right = 1134.0
-offset_bottom = 639.0
-theme_override_colors/font_color = Color(1, 0, 1, 1)
-text = "V1 is where Char will be displayed*"
+[node name="Obj" type="Sprite2D" parent="." unique_id=619775608]
+position = Vector2(1037.375, 549.375)
+scale = Vector2(0.035739742, 0.035739742)
+texture = ExtResource("3_fdl0h")
 
-[node name="Label2" type="Label" parent="." unique_id=1218821947]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-theme_override_font_sizes/font_size = 26
-text = "OBJECTIVES:
--IDK
--IDK
--IDK"
+[node name="Label" type="Label" parent="Obj" unique_id=1196537040]
+anchors_preset = -1
+anchor_left = 0.22012037
+anchor_top = 0.24763522
+anchor_right = 0.6799868
+anchor_bottom = 0.46915457
+offset_left = -3508.0
+offset_top = -3508.0
+offset_right = -3237.4226
+offset_bottom = -4289.997
+rotation = 0.23157823
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 487
+text = "Enter the town"
+metadata/_edit_use_anchors_ = true

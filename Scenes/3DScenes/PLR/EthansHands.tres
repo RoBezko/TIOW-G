@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://k403dcoi0uyx"]
+
+[resource]
+albedo_color = Color(1, 0.62352943, 0.14509805, 1)
+use_z_clip_scale = true
+z_clip_scale = 0.5

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dhiujtr1xvcxc"]
+
+[ext_resource type="Script" uid="uid://c3nysp2reoswt" path="res://scripts/NPCinteract.gd" id="1_hvkha"]
+[ext_resource type="Resource" uid="uid://cylxvsm6qm1j" path="res://Dialog/yap/TSTtimeline.dtl" id="2_7sc0t"]
+[ext_resource type="Texture2D" uid="uid://b767i3fn5fyqa" path="res://IMG/UI/E.png" id="3_ep0a7"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_g4v7s"]
+radius = 1.531594
+
+[node name="Area3D" type="Area3D" unique_id=2063862168]
+script = ExtResource("1_hvkha")
+Timeline = ExtResource("2_7sc0t")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1158830056]
+shape = SubResource("SphereShape3D_g4v7s")
+
+[node name="Sprite" type="Sprite3D" parent="." unique_id=1878480461]
+transform = Transform3D(-6.3381513e-09, 0, 0.145, 0, 0.145, 0, -0.145, 0, -6.3381513e-09, 0, 0, 0)
+billboard = 1
+texture = ExtResource("3_ep0a7")
+
+[connection signal="body_entered" from="." to="." method="body_entered"]
+[connection signal="body_exited" from="." to="." method="body_exited"]
