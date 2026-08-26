@@ -6,7 +6,9 @@
 [ext_resource type="Script" uid="uid://b7o75gq4ghdbc" path="res://scripts/Menu/main_menu.gd" id="4_d5x1h"]
 [ext_resource type="PackedScene" uid="uid://ek77jtagob0e" path="res://Scenes/3DScenes/start_scene.tscn" id="4_nfk4m"]
 [ext_resource type="PackedScene" uid="uid://dbr30oi6nl87x" path="res://Scenes/UI/hud.tscn" id="6_hq1ik"]
+[ext_resource type="Texture2D" uid="uid://b688p8xtom74f" path="res://IMG/UI/back.png" id="6_mo76n"]
 [ext_resource type="Texture2D" uid="uid://cf3d6wn8b7q74" path="res://IMG/UI/Document.png" id="7_7ycvg"]
+[ext_resource type="Texture2D" uid="uid://bbcaqgnwd8vfs" path="res://IMG/UI/Logo.png" id="7_42l1d"]
 [ext_resource type="Script" uid="uid://d2hjxofgu1nsj" path="res://scripts/Menu/folder_appear.gd" id="7_wr18j"]
 [ext_resource type="Sky" uid="uid://cfc3ob8a4o63e" path="res://Scenes/Materials/NightSkyHDRI014_2K.tres" id="8_66tet"]
 [ext_resource type="Texture2D" uid="uid://dbmw5nnmhbog3" path="res://IMG/UI/ECrossSig.png" id="8_wr18j"]
@@ -42,6 +44,45 @@ size = Vector2(0.05, 0.05)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_66tet"]
 data = PackedVector3Array(0.5, -0.5, 0, -0.5, -0.5, 0, 0.5, 0.5, 0, -0.5, -0.5, 0, -0.5, 0.5, 0, 0.5, 0.5, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yigbh"]
+bg_color = Color(0.43257594, 0.28942594, 0.047343522, 1)
+skew = Vector2(0.2, 0)
+border_width_right = 35
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tre5w"]
+bg_color = Color(0.3045187, 0.19949216, 0.023659296, 1)
+skew = Vector2(0.2, 0)
+border_width_right = 55
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ipfwe"]
+bg_color = Color(0.24901706, 0.15992743, 0.015654335, 1)
+skew = Vector2(0.2, 0)
+border_width_right = 106
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="Theme" id="Theme_8mf1q"]
+Button/font_sizes/font_size = 59
+Button/styles/hover = SubResource("StyleBoxFlat_yigbh")
+Button/styles/normal = SubResource("StyleBoxFlat_tre5w")
+Button/styles/pressed = SubResource("StyleBoxFlat_ipfwe")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yf5fn"]
 bg_color = Color(0, 0, 0, 1)
@@ -383,25 +424,25 @@ grow_vertical = 2
 script = ExtResource("4_d5x1h")
 main_scene = NodePath("../..")
 
-[node name="Name" type="Label" parent="UI/MainMenu" unique_id=855337303]
-layout_mode = 0
-anchor_left = 0.046006944
-anchor_top = 0.08796296
-anchor_right = 0.29774305
-anchor_bottom = 0.28703704
-theme_override_font_sizes/font_size = 91
-text = "NAME"
-metadata/_edit_use_anchors_ = true
+[node name="Back" type="Sprite2D" parent="UI/MainMenu" unique_id=1748210398]
+position = Vector2(576, 336)
+texture = ExtResource("6_mo76n")
+
+[node name="Logo" type="Sprite2D" parent="UI/MainMenu" unique_id=1667294853]
+position = Vector2(208, 128)
+scale = Vector2(0.0753991, 0.075399086)
+texture = ExtResource("7_42l1d")
 
 [node name="Play" type="Button" parent="UI/MainMenu" unique_id=414516427]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
 anchor_left = 0.053819444
 anchor_top = 0.36574075
-anchor_right = 0.18402778
-anchor_bottom = 0.5046296
-offset_right = -103.0
-offset_bottom = -59.0
-theme_override_font_sizes/font_size = 59
+anchor_right = 0.27800003
+anchor_bottom = 0.492
+offset_right = -0.25604248
+offset_bottom = 0.18399048
+theme = SubResource("Theme_8mf1q")
 text = "PLAY"
 metadata/_edit_use_anchors_ = true
 
