@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dlklbx3l4hgti"
+path="res://.godot/imported/Background game jam.mp3-dad847690e3095d15a64559ac91f5568.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Music/Background game jam.mp3"
+dest_files=["res://.godot/imported/Background game jam.mp3-dad847690e3095d15a64559ac91f5568.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

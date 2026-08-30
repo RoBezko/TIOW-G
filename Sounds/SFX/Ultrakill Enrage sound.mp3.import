@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://7trqgjkr0tet"
+path="res://.godot/imported/Ultrakill Enrage sound.mp3-fc94cb6d1f3d7211ba2b44e17c20999c.mp3str"
+
+[deps]
+
+source_file="res://Sounds/SFX/Ultrakill Enrage sound.mp3"
+dest_files=["res://.godot/imported/Ultrakill Enrage sound.mp3-fc94cb6d1f3d7211ba2b44e17c20999c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

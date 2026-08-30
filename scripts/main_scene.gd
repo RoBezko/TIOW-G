@@ -13,7 +13,11 @@ class_name MainScene
 @onready var show_interact: Control = $UI/ShowInteract
 @onready var show_interact_anim: AnimationPlayer = $UI/ShowInteract/Anim
 
-@onready var hud: Control = $UI/HUD
+@onready var ending: Control = $UI/Ending
+@onready var credits: Control = $UI/Credits
+@onready var credits_anim: AnimationPlayer = $UI/Credits/AnimationPlayer
+
+@onready var hud: HUD = $UI/HUD
 @onready var rain: GPUParticles3D = $PLR/Rain
 
 var current_level: Node = null
@@ -67,6 +71,11 @@ func start_intro():
 	start_visual_anim.play("Fade out")
 	await start_visual_anim.animation_finished
 	start_visual.visible = false
+	
+	var music = Global.main_scene.plr.sfx.music
+	var sfx = Global.main_scene.plr.sfx
+	sfx.play_sfx(music, preload("uid://co2fi8mkwdm81"))
+	
 	if current_level.name == "StartScene":
 		current_level.talking.play()
 		await current_level.talking.finished

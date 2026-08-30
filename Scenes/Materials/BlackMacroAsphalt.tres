@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c2ao3amcxqdrb"]
+
+[ext_resource type="Texture2D" uid="uid://c4uj8un5idv6v" path="res://IMG/Tex/asphalt.png" id="1_an74y"]
+
+[resource]
+albedo_texture = ExtResource("1_an74y")
+uv1_scale = Vector3(8.205, 8.205, 8.205)
+uv1_triplanar = true
+uv1_world_triplanar = true

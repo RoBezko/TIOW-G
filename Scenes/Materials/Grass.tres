@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b5s8m23i487or"]
+
+[ext_resource type="Texture2D" uid="uid://d2a22x75pathx" path="res://IMG/Tex/seamless_grass_01.png" id="1_y0gpf"]
+
+[resource]
+albedo_texture = ExtResource("1_y0gpf")
+uv1_scale = Vector3(0.025, 0.025, 0.025)
+uv1_triplanar = true
+uv1_world_triplanar = true
+uv2_world_triplanar = true

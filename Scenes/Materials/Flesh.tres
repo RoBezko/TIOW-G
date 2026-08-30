@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://tm3osvv6eeft"]
+
+[ext_resource type="Texture2D" uid="uid://dls1t60ea5m8c" path="res://IMG/Tex/Alien flesh.png" id="1_i6kas"]
+
+[resource]
+albedo_texture = ExtResource("1_i6kas")
+emission_enabled = true
+emission = Color(0.48802793, 0.2062332, 0.24823692, 1)
+emission_energy_multiplier = 0.45
+emission_on_uv2 = true
+uv1_scale = Vector3(0.285, 0.285, 0.285)
+uv1_triplanar = true
+uv1_world_triplanar = true
+uv2_triplanar = true
+uv2_world_triplanar = true

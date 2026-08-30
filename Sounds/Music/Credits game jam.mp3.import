@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://djyyipntrhnuy"
+path="res://.godot/imported/Credits game jam.mp3-c57bf74141e06d24c2109edd4b875cec.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Music/Credits game jam.mp3"
+dest_files=["res://.godot/imported/Credits game jam.mp3-c57bf74141e06d24c2109edd4b875cec.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

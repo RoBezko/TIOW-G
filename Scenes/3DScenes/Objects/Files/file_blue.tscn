@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://dybxobgsvkj7n"]
+
+[ext_resource type="Material" uid="uid://bfotkm4gwnomd" path="res://Scenes/Materials/yellowish_concreate.tres" id="1_14uvs"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pcl37"]
+albedo_color = Color(0, 0, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vgx07"]
+albedo_color = Color(0, 0, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tacym"]
+albedo_color = Color(0, 0, 1, 1)
+
+[node name="File" type="Node3D" unique_id=1375457887]
+transform = Transform3D(-2.3254458e-08, 0, 0.532, 0, 0.532, 0, -0.532, 0, -2.3254458e-08, 0, 0, 0)
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=2016181700]
+use_collision = true
+
+[node name="Paper" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1002742882]
+size = Vector3(0.26, 0.96, 0.685)
+material = ExtResource("1_14uvs")
+
+[node name="Cover" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1002014195]
+size = Vector3(0.36, 1, 0.855)
+material = SubResource("StandardMaterial3D_pcl37")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D/Cover" unique_id=1335335869]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.09486328)
+operation = 2
+size = Vector3(0.26, 1, 0.87472653)
+material = SubResource("StandardMaterial3D_vgx07")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCombiner3D/Cover" unique_id=1839996301]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.20975564, 0.35949707)
+operation = 2
+radius = 0.13134766
+height = 0.39331055
+material = SubResource("StandardMaterial3D_tacym")

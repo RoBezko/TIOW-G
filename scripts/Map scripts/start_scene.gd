@@ -4,13 +4,15 @@ extends Node3D
 @onready var talking: AudioStreamPlayer3D = $Talking
 var stopped_talking: bool = false
 
+
+
 func _process(delta: float) -> void:
 	if talking.finished and stopped_talking:
 		Global.main_scene.show_interact.visible = true
 		Global.main_scene.show_interact_anim.play("AnimStart")
 		stopped_talking = false
 	
-	if Input.is_action_just_pressed("Interact"):
+	if Input.is_action_just_pressed("Interact") and not Global.is_in_menu:
 		Global.main_scene.plr.sfx.play_sfx(Global.main_scene.plr.sfx.misc, preload("uid://do8l1brcbskej"))
 		Global.main_scene.folder_appear.visible = true
 		Global.main_scene.show_interact.visible = false

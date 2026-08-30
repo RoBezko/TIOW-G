@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://bf6xq4v4ao3fm"]
+
+[ext_resource type="Material" uid="uid://dbqxne6xrch6w" path="res://Scenes/Materials/GrayConcreate.tres" id="1_ci0v4"]
+[ext_resource type="Material" uid="uid://cwb11ms3cf6fy" path="res://Scenes/Materials/Sidewalk.tres" id="2_a4urj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g4v7s"]
+albedo_color = Color(1, 0.8, 0, 1)
+metallic_specular = 1.0
+emission_enabled = true
+emission = Color(0.24115598, 0.2411561, 0.24115604, 1)
+emission_energy_multiplier = 4.06
+
+[node name="StreetLamp" type="Node3D" unique_id=1224897270]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=1036796428]
+use_collision = true
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCombiner3D" unique_id=1439611689]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5930959, 0)
+radius = 0.09033203
+height = 3.52417
+material = ExtResource("1_ci0v4")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1406491107]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.18457031, 0)
+size = Vector3(0.5, 0.156, 0.5)
+material = ExtResource("2_a4urj")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1843483201]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.3141336, 0.059326172)
+size = Vector3(0.27, 0.176, 0.381)
+material = ExtResource("1_ci0v4")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D" unique_id=58556357]
+transform = Transform3D(1, 0, 0, 0, 0.9651198, 0.26180866, 0, -0.26180866, 0.9651198, 0, 3.261987, 1.4219923)
+size = Vector3(0.27, 0.21641797, 0.381)
+material = ExtResource("1_ci0v4")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1199368849]
+transform = Transform3D(1, 0, 0, 0, 0.9651198, 0.26180866, 0, -0.26180866, 0.9651198, 0, 3.1991014, 1.4482893)
+size = Vector3(0.23, 0.146, 0.286)
+material = SubResource("StandardMaterial3D_g4v7s")
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CSGCombiner3D" unique_id=168150044]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 3.3094265, 0.7029662)
+radius = 0.057617188
+height = 1.6196289
+material = ExtResource("1_ci0v4")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=17486674]
+transform = Transform3D(1, 0, 0, 0, -0.25881907, 0.9659258, 0, -0.9659259, -0.25881907, 0, 3.1394935, 1.4862111)
+light_color = Color(1, 0.9262493, 0.724021, 1)
+light_energy = 16.0
+light_indirect_energy = 3.831
+light_volumetric_fog_energy = 2.846
+spot_range = 11.383715
+spot_angle = 29.035265

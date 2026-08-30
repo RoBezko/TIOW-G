@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ei46hvolj14d"]
+
+[ext_resource type="Texture2D" uid="uid://wfbgsj4l71ni" path="res://IMG/Tex/Dirt 3.png" id="1_hoqge"]
+
+[resource]
+albedo_color = Color(0.50074106, 1.2153015e-06, 1.4439226e-07, 1)
+albedo_texture = ExtResource("1_hoqge")
+uv1_scale = Vector3(2, 2, 2)
+uv1_triplanar = true
+uv1_triplanar_sharpness = 0.18946458
+uv1_world_triplanar = true

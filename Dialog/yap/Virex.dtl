@@ -1,0 +1,36 @@
+join Virex right
+[voice path="res://Sounds/Dialog/Virex/Virex1.mp3" volume="0.0" bus="Dialog"]
+Virex: Hello welcome to the store. They don't pay me as much as I thought they would. I should probably quit..
+join PLR (Neuteral) left
+PLR (Neuteral): Hello there Miss, have you seen anything out of the ordinary lately?
+[voice path="res://Sounds/Dialog/Virex/Virex2.mp3" volume="0.0" bus="Dialog"]
+Virex: No but we are selling pineapples for like 2 Zloty
+PLR (Neuteral): I, uhh..
+- Are you sure you havent seen anything recently?
+	PLR (Confused): Are you sure you havent seen anything recently Miss?
+	[voice path="res://Sounds/Dialog/Virex/Virex3.mp3" volume="0.0" bus="Dialog"]
+	Virex: The only thing I've seen was my paycheck being 3 Zloty an hour
+	PLR (Confused): Miss please I-
+	[voice path="res://Sounds/Dialog/Virex/Virex4.mp3" volume="0.0" bus="Dialog"]
+	Virex: Look you either get the pineapple or go and ask Officer Green, he's across the street on the western half of the city, right next to that decaying house over there
+	PLR (Neuteral): ..*sigh* Okay then
+- But the shelfs are empty?
+	PLR (Confused): But the shelfs are empty?
+	[voice path="res://Sounds/Dialog/Virex/Virex5.mp3" volume="0.0" bus="Dialog"]
+	Virex: Yea because the locals took everything
+	PLR (Confused): Then why are you asking me to buy a pineapple?
+	[voice path="res://Sounds/Dialog/Virex/Virex6.mp3" volume="0.0" bus="Dialog"]
+	Virex: What pineapple?
+	PLR (Confused): The one that you tried to sell me?
+	[voice path="res://Sounds/Dialog/Virex/Virex7.mp3" volume="0.0" bus="Dialog"]
+	Virex: I was trying to sell you something?
+	PLR (Mad): ...
+- Why are you blue?
+	PLR (Neuteral): Why are you blue?
+	audio SFX "res://Sounds/SFX/Ultrakill Enrage sound.mp3"
+	[voice path="res://Sounds/Dialog/Virex/Virex8.mp3" volume="0.0" bus="Dialog"]
+	Virex (MAD): IS THIS ANY BETTER?!
+	PLR (Confused): WHOA WAIT!
+	[voice path="res://Sounds/Dialog/Virex/Virex9.mp3" volume="0.0" bus="Dialog"]
+	Virex (TST): Thats what I thought
+	PLR (Neuteral): ...

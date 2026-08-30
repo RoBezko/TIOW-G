@@ -6,15 +6,17 @@ const JUMP_VELOCITY = 4.5
 
 @export var sfx: PLRsfxNode
 @export var rain_particles: GPUParticles3D
+@export var hud: HUD
 
 @onready var camera_controller: Node3D = $CameraController
+@onready var camera: Camera3D = $CameraController/Camera3D
 @onready var flashlight_light: SpotLight3D = $CameraController/Camera3D/FlashlightLight
 @onready var flash_hold: Node3D = $CameraController/Camera3D/FlashHold
 @onready var ambiant_light: OmniLight3D = $OmniLight3D
 
+
 var flash_on: bool = false
 var raining: bool = false
-
 
 
 func _input(event: InputEvent) -> void:
@@ -26,6 +28,8 @@ func _input(event: InputEvent) -> void:
 				sfx.play_sfx(sfx.flash_click, preload("uid://b2a6n5h5qgbxm"))
 			else:
 				sfx.play_sfx(sfx.flash_click, preload("uid://bxnri416brew6"))
+		
+
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():

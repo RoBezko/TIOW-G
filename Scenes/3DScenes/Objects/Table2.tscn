@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://cfqa75aso033c"]
+
+[ext_resource type="Material" uid="uid://d3rqbets4ofiu" path="res://Scenes/Materials/Trunk.tres" id="1_rkwdq"]
+
+[node name="Table2" type="Node3D" unique_id=1479280226]
+transform = Transform3D(1.265, 0, 0, 0, 1.265, 0, 0, 0, 1.265, 0, 0, 0)
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=1558000834]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=2112559564]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.005126953, 0.063964844, -0.0039520264)
+size = Vector3(0.9897461, 0.8720703, 1.007904)
+material = ExtResource("1_rkwdq")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1710362450]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5292237, 0.031982422, 0.4365425)
+size = Vector3(0.1373291, 0.93603516, 0.12691498)
+material = ExtResource("1_rkwdq")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D" unique_id=419299239]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5292237, 0.031982422, -0.44633758)
+size = Vector3(0.1373291, 0.93603516, 0.12691498)
+material = ExtResource("1_rkwdq")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1283597570]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35180902, -0.34362793, -0.4365818)
+size = Vector3(0.1373291, 0.18481445, 0.12691498)
+material = ExtResource("1_rkwdq")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="CSGCombiner3D" unique_id=941987508]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.37709105, -0.34362793, -0.4365818)
+size = Vector3(0.1373291, 0.18481445, 0.12691498)
+material = ExtResource("1_rkwdq")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1429643180]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.37709105, -0.34362793, 0.43539643)
+size = Vector3(0.1373291, 0.18481445, 0.12691498)
+material = ExtResource("1_rkwdq")
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="CSGCombiner3D" unique_id=603067108]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.34886992, -0.34362793, 0.43539643)
+size = Vector3(0.1373291, 0.18481445, 0.12691498)
+material = ExtResource("1_rkwdq")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=785131133]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.55796814, 0.48743594, -0.009315491)
+size = Vector3(2.1772766, 0.09277344, 1.0706024)
+material = ExtResource("1_rkwdq")

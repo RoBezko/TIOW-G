@@ -1,8 +1,19 @@
 [gd_scene format=3 uid="uid://dbr30oi6nl87x"]
 
+[ext_resource type="Script" uid="uid://bbqos3fp2s4eg" path="res://scripts/Menu/hud.gd" id="1_8glcj"]
 [ext_resource type="Texture2D" uid="uid://b44ppsp5v7484" path="res://IMG/UI/TSTHud.png" id="1_sprlj"]
-[ext_resource type="Texture2D" uid="uid://cy7eh6wnp7vrl" path="res://IMG/UI/mashineTrue.png" id="2_ny26j"]
-[ext_resource type="Texture2D" uid="uid://0jtlco1uoilv" path="res://IMG/UI/OBJ.png" id="3_fdl0h"]
+[ext_resource type="Texture2D" uid="uid://m3ra2bjg4fdf" path="res://IMG/UI/EthanPFP.png" id="3_fdl0h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yf5fn"]
+bg_color = Color(0.74208647, 0.7431727, 0.56835335, 0.3019608)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 0.78039217, 0.09019608, 1)
+
+[sub_resource type="Theme" id="Theme_g4v7s"]
+TextEdit/styles/normal = SubResource("StyleBoxFlat_yf5fn")
 
 [node name="HUD" type="Control" unique_id=2028653410]
 layout_mode = 3
@@ -11,35 +22,48 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_8glcj")
 
 [node name="TstHud" type="Sprite2D" parent="." unique_id=2045987444]
-position = Vector2(360, 199.99997)
-rotation = 3.1415927
+position = Vector2(800.00006, 456)
 scale = Vector2(0.09033332, 0.090333335)
 texture = ExtResource("1_sprlj")
 
-[node name="MashineTrue" type="Sprite2D" parent="." unique_id=815702081]
-position = Vector2(64.00001, 72)
-scale = Vector2(0.12551628, 0.27958575)
-texture = ExtResource("2_ny26j")
+[node name="Name" type="Label" parent="." unique_id=1858696877]
+layout_mode = 0
+offset_left = 792.0
+offset_top = 616.0
+offset_right = 1024.0
+offset_bottom = 648.0
+theme_override_colors/font_color = Color(1, 0.5294118, 0.23529412, 1)
+theme_override_font_sizes/font_size = 31
+text = "Ethan Cross"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Obj" type="Sprite2D" parent="." unique_id=619775608]
-position = Vector2(1037.375, 549.375)
-scale = Vector2(0.035739742, 0.035739742)
+[node name="EthanPfp" type="Sprite2D" parent="." unique_id=601028086]
+position = Vector2(1048, 584)
+scale = Vector2(0.07368872, 0.07368874)
 texture = ExtResource("3_fdl0h")
 
-[node name="Label" type="Label" parent="Obj" unique_id=1196537040]
-anchors_preset = -1
-anchor_left = 0.22012037
-anchor_top = 0.24763522
-anchor_right = 0.6799868
-anchor_bottom = 0.46915457
-offset_left = -3508.0
-offset_top = -3508.0
-offset_right = -3237.4226
-offset_bottom = -4289.997
-rotation = 0.23157823
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 487
-text = "Enter the town"
+[node name="Notepad" type="TextEdit" parent="." unique_id=127313024]
+visible = false
+layout_mode = 0
+anchor_left = 0.020833334
+anchor_top = 0.049382716
+anchor_right = 0.29166666
+anchor_bottom = 0.5802469
+theme = SubResource("Theme_g4v7s")
+placeholder_text = "Write down everything you need here"
 metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="." unique_id=1368528294]
+visible = false
+layout_mode = 0
+offset_top = 632.0
+offset_right = 237.0
+offset_bottom = 649.0
+theme_override_colors/font_color = Color(1, 0.78039217, 0.09019608, 1)
+text = "Press TAB to open your notepad*"
+horizontal_alignment = 1
+vertical_alignment = 1

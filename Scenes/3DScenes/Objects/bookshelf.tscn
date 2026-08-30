@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://bejwfdsn2vjwo"]
+
+[ext_resource type="Material" uid="uid://d3rqbets4ofiu" path="res://Scenes/Materials/Trunk.tres" id="1_r60gl"]
+[ext_resource type="PackedScene" uid="uid://dybxobgsvkj7n" path="res://Scenes/3DScenes/Objects/Files/file_blue.tscn" id="2_hilrk"]
+[ext_resource type="PackedScene" uid="uid://by2scrcwn87y8" path="res://Scenes/3DScenes/Objects/Files/file_red.tscn" id="3_fdgmx"]
+[ext_resource type="PackedScene" uid="uid://cy3fa52j8ou48" path="res://Scenes/3DScenes/Objects/Files/file_yellow.tscn" id="4_xa0lk"]
+
+[node name="Bookshelf" type="Node3D" unique_id=1439313521]
+transform = Transform3D(1.385, 0, 0, 0, 1.385, 0, 0, 0, 1.385, 0, 0, 0)
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=2101180454]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=443795992]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.42559814, 0)
+size = Vector3(1, 0.14880371, 3)
+material = ExtResource("1_r60gl")
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1376310321]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4128418, 1.1910706, 0)
+size = Vector3(0.1743164, 3.382141, 3)
+material = ExtResource("1_r60gl")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1092119972]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.277812, 0)
+size = Vector3(1, 0.14880371, 3)
+material = ExtResource("1_r60gl")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D" unique_id=751182288]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1159177, 0)
+size = Vector3(1, 0.14880371, 3)
+material = ExtResource("1_r60gl")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1074082786]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9465404, 0)
+size = Vector3(1, 0.14880371, 3)
+material = ExtResource("1_r60gl")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1322125239]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8070948, 0)
+size = Vector3(1, 0.14880371, 3)
+material = ExtResource("1_r60gl")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=2005696317]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1950989, 1.3973541)
+size = Vector3(1, 3.3901978, 0.20361328)
+material = ExtResource("1_r60gl")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1612358332]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1950989, -1.4088025)
+size = Vector3(1, 3.3901978, 0.20361328)
+material = ExtResource("1_r60gl")
+
+[node name="Files" type="Node3D" parent="." unique_id=749625280]
+
+[node name="File" parent="Files" unique_id=1375457887 instance=ExtResource("2_hilrk")]
+transform = Transform3D(-2.3254458e-08, 0, 0.53199995, 0, 0.53199995, 0, -0.53199995, 0, -2.3254458e-08, 0.05861137, -0.08669635, 1.1464685)
+
+[node name="File2" parent="Files" unique_id=1601622256 instance=ExtResource("2_hilrk")]
+transform = Transform3D(-2.325446e-08, 0, 0.53199995, -0.28229216, 0.4509269, -1.2339384e-08, -0.4509269, -0.28229216, -1.9710644e-08, 0.13837573, -0.08669635, -1.0633376)
+
+[node name="File3" parent="Files" unique_id=1412817346 instance=ExtResource("2_hilrk")]
+transform = Transform3D(-2.3254458e-08, 0, 0.53199995, 0, 0.53199995, 0, -0.53199995, 0, -2.3254458e-08, 0.0044950023, 0.61437744, 0.34683198)
+
+[node name="File4" parent="Files" unique_id=1714195294 instance=ExtResource("2_hilrk")]
+transform = Transform3D(-2.325446e-08, 0, 0.53199995, 0, 0.53199995, 0, -0.53199995, 0, -2.325446e-08, -0.032610845, 1.4527879, 0.6926207)
+
+[node name="File5" parent="Files" unique_id=1035401650 instance=ExtResource("2_hilrk")]
+transform = Transform3D(-2.3254458e-08, 0, 0.53199995, 0, 0.53199995, 0, -0.53199995, 0, -2.3254458e-08, 0.05861137, 1.4477828, -0.75536937)
+
+[node name="File6" parent="Files" unique_id=1048859705 instance=ExtResource("2_hilrk")]
+transform = Transform3D(-2.3254458e-08, 0, 0.53199995, 0, 0.53199995, 0, -0.53199995, 0, -2.3254458e-08, 0.05861137, 2.2804735, -0.75536937)
+
+[node name="File7" parent="Files" unique_id=797794351 instance=ExtResource("3_fdgmx")]
+transform = Transform3D(-2.3254458e-08, 0, 0.53199995, 0, 0.53199995, 0, -0.53199995, 0, -2.3254458e-08, -0.12123123, -0.09410999, 0.9246017)
+
+[node name="File8" parent="Files" unique_id=443167047 instance=ExtResource("3_fdgmx")]
+transform = Transform3D(-2.325446e-08, 0, 0.53199995, 0.17383447, 0.5027977, 7.598547e-09, -0.5027977, 0.17383447, -2.197799e-08, 0.024548043, -0.09410999, 0.6472924)
+
+[node name="File9" parent="Files" unique_id=947051363 instance=ExtResource("3_fdgmx")]
+transform = Transform3D(-2.3254458e-08, 0, 0.53199995, -1.8231813e-17, 0.5319999, -6.41284e-16, -0.5319999, -3.1391123e-16, -2.3254454e-08, -0.12123123, 0.6159936, 0.6003504)
+
+[node name="File10" parent="Files" unique_id=183439453 instance=ExtResource("3_fdgmx")]
+transform = Transform3D(-2.3254458e-08, 0, 0.53199995, -1.8231813e-17, 0.5319999, -6.41284e-16, -0.5319999, -3.1391123e-16, -2.3254454e-08, -0.12123123, 0.6159936, -1.196927)
+
+[node name="File11" parent="Files" unique_id=1688847853 instance=ExtResource("3_fdgmx")]
+transform = Transform3D(-2.3254458e-08, 0, 0.53199995, -1.8231813e-17, 0.5319999, -6.41284e-16, -0.5319999, -3.1391123e-16, -2.3254454e-08, 0.034066882, 0.61599356, -0.9236297)
+
+[node name="File12" parent="Files" unique_id=873478709 instance=ExtResource("3_fdgmx")]
+transform = Transform3D(-2.3254458e-08, 0, 0.53199995, -1.8231813e-17, 0.5319999, -6.41284e-16, -0.5319999, -3.1391123e-16, -2.3254454e-08, -0.12123123, 1.4522847, -0.9977442)
+
+[node name="File13" parent="Files" unique_id=2028314642 instance=ExtResource("3_fdgmx")]
+transform = Transform3D(-2.3254458e-08, -1.2120546e-30, 0.53199995, 0.14174542, 0.51276904, 6.1958882e-09, -0.51276904, 0.14174542, -2.2413847e-08, -0.12123123, 2.2830498, 1.140455)
+
+[node name="File14" parent="Files" unique_id=1357844788 instance=ExtResource("4_xa0lk")]
+transform = Transform3D(-2.3254458e-08, 0, 0.53199995, 0, 0.53199995, 0, -0.53199995, 0, -2.3254458e-08, -0.12140752, 2.285108, 0.8486324)
+
+[node name="File15" parent="Files" unique_id=539431995 instance=ExtResource("4_xa0lk")]
+transform = Transform3D(-2.3254458e-08, 0, 0.53199995, 0, 0.53199995, 0, -0.53199995, 0, -2.3254458e-08, 0.034683835, 2.285108, 0.6102981)
+
+[node name="File16" parent="Files" unique_id=567176925 instance=ExtResource("4_xa0lk")]
+transform = Transform3D(-2.3254458e-08, 0, 0.53199995, 0, 0.53199995, 0, -0.53199995, 0, -2.3254458e-08, -0.12140752, 0.6183336, 0.8216058)
+
+[node name="File17" parent="Files" unique_id=1367433653 instance=ExtResource("4_xa0lk")]
+transform = Transform3D(-2.325446e-08, 0, 0.53199995, 0.09637921, 0.5231969, 4.21287e-09, -0.5231969, 0.09637921, -2.2869663e-08, -0.12140752, 0.6183336, 0.10279463)
+
+[node name="File18" parent="Files" unique_id=1968281846 instance=ExtResource("4_xa0lk")]
+transform = Transform3D(-2.3254458e-08, -5.8274353e-16, 0.53199995, 0.21496227, 0.48663655, 9.396301e-09, -0.48663655, 0.21496227, -2.1271559e-08, -0.12140752, -0.08471889, 0.41314974)

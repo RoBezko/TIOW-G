@@ -6,7 +6,7 @@
 [ext_resource type="Material" uid="uid://2imt7emdyh5q" path="res://Scenes/Materials/DarkBricks.tres" id="3_eb2uo"]
 [ext_resource type="PackedScene" uid="uid://bjmujxe2jqilt" path="res://Scenes/3DScenes/Objects/folder.tscn" id="5_wvloj"]
 [ext_resource type="Script" uid="uid://mbgi3mfejiek" path="res://scripts/lvl_transition.gd" id="6_eb2uo"]
-[ext_resource type="AudioStream" uid="uid://x33ne56fyu0l" path="res://Sounds/SFX/CloseGate.mp3" id="7_eq1mn"]
+[ext_resource type="AudioStream" uid="uid://blfb7qwao3jb" path="res://Sounds/Dialog/Intro.mp3" id="7_eq1mn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yf5fn"]
 albedo_texture = ExtResource("1_ap8rh")
@@ -94,7 +94,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3034668, 0.117370605, -0.7
 shape = SubResource("BoxShape3D_g4v7s")
 
 [node name="Talking" type="AudioStreamPlayer3D" parent="." unique_id=946668594]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1391318, -7.197817)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1391318, -8.207241)
 stream = ExtResource("7_eq1mn")
+volume_db = -4.103
+bus = &"Dialog"
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="on_body_entered"]

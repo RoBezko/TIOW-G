@@ -2,7 +2,7 @@
 "@path": "res://addons/dialogic/Resources/character.gd",
 "@subpath": NodePath(""),
 &"_translation_id": "",
-&"color": Color(1, 1, 1, 1),
+&"color": Color(1, 0.5983887, 0.08203125, 1),
 &"custom_info": {
 "prefix": "",
 "sound_mood_default": "",
@@ -10,16 +10,34 @@
 "style": "",
 "suffix": ""
 },
-&"default_portrait": "TST",
+&"default_portrait": "Neuteral",
 &"description": "The Detective from abroad",
 &"display_name": "Ethan Cross ",
 &"mirror": false,
 &"nicknames": ["Ethan"],
 &"offset": Vector2(0, 0),
 &"portraits": {
-"TST": {
+"Confused": {
 "export_overrides": {
-"image": "\"res://IMG/Portraits/guy.png\""
+"image": "\"res://IMG/Portraits/E_confused.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Mad": {
+"export_overrides": {
+"image": "\"res://IMG/Portraits/E_mad.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Neuteral": {
+"export_overrides": {
+"image": "\"res://IMG/Portraits/E_neutral.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),

@@ -42,9 +42,9 @@ fov = 80.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5235977, -0.24615753, -1.5195469)
 visible = false
 light_color = Color(0.961513, 0.961513, 2.3102762e-06, 1)
-light_energy = 5.752
+light_energy = 10.921
 light_indirect_energy = 6.228
-spot_range = 7.821
+spot_range = 28.482693
 spot_angle = 21.594809
 
 [node name="FlashHold" parent="CameraController/Camera3D" unique_id=822649562 instance=ExtResource("3_7dbqx")]
@@ -73,6 +73,13 @@ bus = &"Ambiant"
 stream = ExtResource("4_po4vs")
 volume_db = -20.0
 bus = &"Ambiant"
+
+[node name="VA" type="AudioStreamPlayer" parent="SFX" unique_id=103284922]
+bus = &"Dialog"
+
+[node name="Music" type="AudioStreamPlayer" parent="SFX" unique_id=136141648]
+volume_db = -20.0
+bus = &"Music"
 
 [node name="Footstepper" type="Node3D" parent="." unique_id=1844249512]
 script = ExtResource("4_gsg5x")

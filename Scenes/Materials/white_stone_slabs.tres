@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cm76pfpwfma7x"]
+
+[ext_resource type="Texture2D" uid="uid://cbykxuhhkadxj" path="res://IMG/Tex/Stone slab.png" id="1_66fme"]
+
+[resource]
+albedo_texture = ExtResource("1_66fme")
+uv1_triplanar = true
+uv1_world_triplanar = true

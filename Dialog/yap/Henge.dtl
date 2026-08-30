@@ -1,0 +1,39 @@
+join Henge center
+[voice path="res://Sounds/Dialog/Hedge/Henge1.mp3" volume="0.0" bus="Dialog"]
+Henge: What do you want kid?
+join PLR (Neuteral) left
+PLR (Neuteral): Hello there sir, I am Detective Ethan Cross and-
+[voice path="res://Sounds/Dialog/Hedge/Henge2.mp3" volume="0.0" bus="Dialog"]
+Henge: And your 'investigating' these disapearinces are you?
+PLR (Confused): Well.. well yes, sir
+[voice path="res://Sounds/Dialog/Hedge/Henge3.mp3" volume="0.0" bus="Dialog"]
+Henge: Listen kid, I don't care if you wear a fancy badge or not, leave my home and don't return, I don't have time for you government smucks
+PLR (Neuteral): Sir..
+- I just need you to awnser a couple questions..
+	PLR (Neuteral): ..I just need you to awnser a couple questions, not more then 3, then you'll never see me ever again
+	Henge: ...
+	Henge: ...
+	[voice path="res://Sounds/Dialog/Hedge/Henge4.mp3" volume="0.0" bus="Dialog"]
+	Henge: ..*sigh* FINE child, ask away
+	PLR (Neuteral): Thank you sir. First, have you seen Terra corp. acting up weardly lately?
+	[voice path="res://Sounds/Dialog/Hedge/Henge5.mp3" volume="0.0" bus="Dialog"]
+	Henge: They boxed us in, I can tell you that much. The bishop has been getting more and more paranoid lately too about them.
+	PLR (Confused): Have they been doing anything besides building a wall around the town?
+	[voice path="res://Sounds/Dialog/Hedge/Henge6.mp3" volume="0.0" bus="Dialog"]
+	Henge: Hm.. I believe I did.. see something one night, at the graveyard, on the hill over there, it wasn't natural at all...
+	PLR (Confused): ..Can you describe what 'it' is?
+	[voice path="res://Sounds/Dialog/Hedge/Henge7.mp3" volume="0.0" bus="Dialog"]
+	Henge: ..ARGH! THAT'S ENOUTH! GET OFF MY LAWN!
+- Please, I need to make sure everyone in this town are safe..
+	PLR (Neuteral): ..please, I need to make sure everyone in this town are safe and sound, I do not want there to be any more disapearinces of these people out here..
+	[voice path="res://Sounds/Dialog/Hedge/Henge8.mp3" volume="0.0" bus="Dialog"]
+	Henge: ...*sigh* Fine, what do you want to hear from me?
+	PLR (Confused): Have you seen anything strange happening, say Terra corp., doing something weard before all of these disapearinces started accuring?
+	[voice path="res://Sounds/Dialog/Hedge/Henge9.mp3" volume="0.0" bus="Dialog"]
+	Henge: Nothing from them directly, but I have seen something.. strange one night
+	PLR (Confused): Oh? And what could it be?
+	[voice path="res://Sounds/Dialog/Hedge/Henge10.mp3" volume="0.0" bus="Dialog"]
+	Henge: One night, over too that hill there, the grave yard, I saw.. something, I am not sure what, but it wasn't natural, if I would be you, I'd check there
+	PLR (Neuteral): Well, thank you sir, see you around
+	leave PLR
+	Henge: ...

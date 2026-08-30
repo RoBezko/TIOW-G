@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://behaonbdc1gx"]
+
+[ext_resource type="Texture2D" uid="uid://bmhytp2i5vv6n" path="res://IMG/Tex/Bricks.png" id="1_hr8tm"]
+
+[resource]
+albedo_color = Color(0.492141, 0.48827076, 0.4921413, 1)
+albedo_texture = ExtResource("1_hr8tm")
+uv1_triplanar = true
+uv1_world_triplanar = true

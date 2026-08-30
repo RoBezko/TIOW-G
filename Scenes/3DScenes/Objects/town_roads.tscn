@@ -419,3 +419,13 @@ mesh = SubResource("ArrayMesh_3l3m3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sidewalk8/StaticBody3D" unique_id=1183170984]
 shape = SubResource("ConcavePolygonShape3D_uyqkk")
+
+[node name="Sidewalk9" type="MeshInstance3D" parent="." unique_id=153969308]
+transform = Transform3D(-2.2174582e-07, 0, -0.25628835, 0, 0.04413494, 0, 5.072953, 0, -1.12027205e-08, 2.8777688, 0, -8.999984)
+material_override = ExtResource("2_qhtf0")
+mesh = SubResource("ArrayMesh_a1wur")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sidewalk9" unique_id=638632852]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sidewalk9/StaticBody3D" unique_id=1567579151]
+shape = SubResource("ConcavePolygonShape3D_y8q1s")

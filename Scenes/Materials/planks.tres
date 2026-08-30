@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bb6bkghdte15q"]
+
+[ext_resource type="Texture2D" uid="uid://edl72wgrmq7h" path="res://IMG/Tex/Planks.png" id="1_xekv4"]
+
+[resource]
+albedo_texture = ExtResource("1_xekv4")
+uv1_scale = Vector3(0.405, 0.405, 0.405)
+uv1_triplanar = true
+uv1_world_triplanar = true

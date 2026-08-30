@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://dbmw5nnmhbog3" path="res://IMG/UI/ECrossSig.png" id="8_wr18j"]
 [ext_resource type="AudioStream" uid="uid://ct4f1fd6wr13e" path="res://Sounds/SFX/sig.mp3" id="10_qwutr"]
 [ext_resource type="Texture2D" uid="uid://bnxm82vmcv71r" path="res://IMG/UI/E-new.png" id="11_671wp"]
+[ext_resource type="Texture2D" uid="uid://bp0dn5h3icupo" path="res://IMG/UI/outro.png" id="14_2jcla"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ycvg"]
 shading_mode = 0
@@ -358,11 +359,48 @@ _data = {
 &"RESET": SubResource("Animation_m35m6")
 }
 
+[sub_resource type="Animation" id="Animation_u0ygc"]
+resource_name = "Appear"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_7th4q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6jybn"]
+_data = {
+&"Appear": SubResource("Animation_u0ygc"),
+&"RESET": SubResource("Animation_7th4q")
+}
+
 [sub_resource type="Environment" id="Environment_g4v7s"]
 background_mode = 2
 background_color = Color(0.15127608, 0.15127608, 0.15127608, 1)
 background_energy_multiplier = 5.29
 sky = ExtResource("8_66tet")
+ambient_light_source = 1
 ambient_light_color = Color(1, 1, 1, 1)
 fog_enabled = true
 fog_light_color = Color(0.14942083, 0.16724747, 0.19398704, 1)
@@ -379,9 +417,10 @@ volumetric_fog_detail_spread = 0.5
 [node name="MainScene" type="Node" unique_id=1321147310]
 script = ExtResource("1_gyfs4")
 
-[node name="PLR" parent="." unique_id=2023346319 node_paths=PackedStringArray("rain_particles") instance=ExtResource("1_2c62f")]
+[node name="PLR" parent="." unique_id=2023346319 node_paths=PackedStringArray("rain_particles", "hud") instance=ExtResource("1_2c62f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9627193, 0)
 rain_particles = NodePath("Rain")
+hud = NodePath("../UI/HUD")
 
 [node name="Rain" type="GPUParticles3D" parent="PLR" unique_id=417821062]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.73111, 0)
@@ -415,6 +454,7 @@ shape = SubResource("ConcavePolygonShape3D_66tet")
 [node name="UI" type="CanvasLayer" parent="." unique_id=1985900505]
 
 [node name="MainMenu" type="Control" parent="UI" unique_id=489954409 node_paths=PackedStringArray("main_scene")]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -447,7 +487,6 @@ text = "PLAY"
 metadata/_edit_use_anchors_ = true
 
 [node name="HUD" parent="UI" unique_id=2028653410 instance=ExtResource("6_hq1ik")]
-visible = false
 
 [node name="StartVisual" type="Control" parent="UI" unique_id=2013075747]
 visible = false
@@ -551,6 +590,40 @@ texture = ExtResource("11_671wp")
 
 [node name="Anim" type="AnimationPlayer" parent="UI/ShowInteract" unique_id=2123254825]
 libraries/ = SubResource("AnimationLibrary_u0ygc")
+
+[node name="Ending" type="Control" parent="UI" unique_id=1700534614]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="UI/Ending" unique_id=28009388]
+layout_mode = 1
+anchors_preset = -1
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_g4v7s")
+
+[node name="Credits" type="Control" parent="UI" unique_id=22101059]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/Credits" unique_id=1759748588]
+libraries/ = SubResource("AnimationLibrary_6jybn")
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Credits" unique_id=495129668]
+position = Vector2(584, 328.00003)
+scale = Vector2(0.19298747, 0.19298746)
+texture = ExtResource("14_2jcla")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1271025912]
 environment = SubResource("Environment_g4v7s")

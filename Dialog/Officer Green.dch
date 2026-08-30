@@ -1,0 +1,49 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+&"_translation_id": "",
+&"color": Color(0, 0.03955078, 0.6328125, 1),
+&"custom_info": {
+"prefix": "",
+"sound_mood_default": "",
+"sound_moods": {},
+"style": "",
+"suffix": ""
+},
+&"default_portrait": "Neuteral",
+&"description": "",
+&"display_name": "Officer Green",
+&"mirror": false,
+&"nicknames": [""],
+&"offset": Vector2(0, 0),
+&"portraits": {
+"Confused": {
+"export_overrides": {
+"image": "\"res://IMG/Portraits/Cop_Confused.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Mad": {
+"export_overrides": {
+"image": "\"res://IMG/Portraits/Cop_Mad.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Neuteral": {
+"export_overrides": {
+"image": "\"res://IMG/Portraits/Cop_Neutral.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
+&"scale": 1.0
+}

@@ -1,4 +1,10 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://cwb11ms3cf6fy"]
 
+[ext_resource type="Texture2D" uid="uid://cbykxuhhkadxj" path="res://IMG/Tex/Stone slab.png" id="1_acaoo"]
+
 [resource]
 albedo_color = Color(0.43519226, 0.4351923, 0.43519217, 1)
+albedo_texture = ExtResource("1_acaoo")
+uv1_scale = Vector3(0.705, 0.705, 0.705)
+uv1_triplanar = true
+uv1_world_triplanar = true
